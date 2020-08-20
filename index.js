@@ -7,7 +7,7 @@ const logger = require("discordjs-logger");
 require('dotenv').config();
 
 // Constand Variables
-const prefix = "_";
+const prefix = "h!";
 const ownerID = '274209471968837634';
 client.ver = "1.0.0"
 
