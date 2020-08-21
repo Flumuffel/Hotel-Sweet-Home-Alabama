@@ -8,8 +8,15 @@ module.exports = {
     description: "Send you the changelog of the bot",
     usage: "",
     run: (client, message, args) => {
+        
+        var options = {
+            url: 'https://api.github.com/repos/Flumuffel/Hotel-Sweet-Home-Alabama/releases',
+            headers: {
+                'User-Agent': 'request'
+            }
+        }
 
-        request('https://api.github.com/repos/Flumuffel/Hotel-Sweet-Home-Alabama/releases', function (error, response, body) {
+        request(options , function (error, response, body) {
             console.log('error:', error); // Print the error if one occurred
             console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
             console.log('body:', body);// Print the HTML for the Google homepage.
