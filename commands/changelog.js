@@ -17,7 +17,7 @@ module.exports = {
         }
 
         request(options , function (error, response, body) {
-            if( error == "null") {
+            if( error === "null") {
                 message.channel.send(body.json());
             } else {
                 console.log(error)
