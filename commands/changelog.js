@@ -19,7 +19,7 @@ module.exports = {
         request(options, function (error, response, body) {
             let config = JSON.parse(body)
 
-            for (i = 0; i < 3; i++) {
+            for (i = 0; i < config.length; i++) {
                 let field = [{
                     name: `**Description**`,
                     value: `**${config[i].body}**`,
@@ -33,6 +33,7 @@ module.exports = {
                         fields: field
                     }
                 })
+                if (i == 2) break;
             }
 
 
