@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+var request = require('request');
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
@@ -9,9 +9,11 @@ module.exports = {
     usage: "",
     run: (client, message, args) => {
 
-        let response = await fetch('https://api.github.com/repos/Flumuffel/Hotel-Sweet-Home-Alabama/releases').then(response => response.json());
-
-        console.log(response);
+        request('https://api.github.com/repos/Flumuffel/Hotel-Sweet-Home-Alabama/releases', function (error, response, body) {
+            console.log('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            console.log('body:', body);// Print the HTML for the Google homepage.
+        });
 
     }
 }
