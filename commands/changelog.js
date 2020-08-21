@@ -17,7 +17,7 @@ module.exports = {
         }
 
         request(options, function (error, response, body) {
-            message.channel.send(body);
+            message.channel.send(JSON.parse(body)[0]);
         });
 
     }
