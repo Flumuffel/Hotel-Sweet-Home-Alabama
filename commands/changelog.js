@@ -18,31 +18,23 @@ module.exports = {
 
         request(options, function (error, response, body) {
             let config = JSON.parse(body)
-            let field = []
 
-            for (i = 0; i < config.length; i++) {
-                let a = {
-                    name: `**[${config[i].tag_name}] ${config[i].name}**`,
+            for (i = 0; i < 3; i++) {
+                let field = [{
+                    name: `**Description**`,
                     value: `**${config[i].body}**`,
                     inline: false
-                }
-                field.push(a);
+                }]
 
-                let b = {
-                    name: "   ‍   ",
-                    value: "   ‍   ",
-                    inline: false
-                }
-                field.push(b);
+                message.channel.send({
+                    embed: {
+                        title: `**[${config[i].tag_name}] ${config[i].name}**`,
+                        color: 0x1D82B6,
+                        fields: field
+                    }
+                })
             }
 
-            return message.channel.send({
-                embed: {
-                    title: "Info",
-                    color: 0x1D82B6,
-                    fields: field
-                }
-            })
 
             // {
             //     name: `**Version**`,
