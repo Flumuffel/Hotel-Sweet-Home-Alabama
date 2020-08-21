@@ -28,7 +28,7 @@ module.exports = {
                     inline: false
                 }
                 
-                //array_psuh($field, a);
+                array_psuh($field, a);
             }
 
             return message.channel.send({

@@ -4,7 +4,7 @@ const db = require("quick.db")
 const fs = require("fs");
 const logger = require("discordjs-logger");
 // logger.all(client);
-require('dotenv').config();
+//require('dotenv').config();
 
 // Constand Variables
 const prefix = "h!";
