@@ -28,12 +28,12 @@ module.exports = {
                 }
                 field.push(a);
 
-                let a = {
+                let b = {
                     name: "   ‍   ",
                     value: "   ‍   ",
                     inline: false
                 }
-                field.push(a);
+                field.push(b);
             }
 
             return message.channel.send({
