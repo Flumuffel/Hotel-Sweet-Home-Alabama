@@ -1,6 +1,5 @@
 var request = require('request');
 const { MessageEmbed } = require("discord.js");
-const { config } = require('dotenv/types');
 
 module.exports = {
     name: "changelog",
