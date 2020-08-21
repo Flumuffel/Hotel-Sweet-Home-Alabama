@@ -9,8 +9,7 @@ module.exports = {
     usage: "",
     run: (client, message, args) => {
 
-        let response = fetch('https://api.github.com/repos/Flumuffel/Hotel-Sweet-Home-Alabama/releases');
-        console.log(response);
+        fetch('https://api.github.com/repos/Flumuffel/Hotel-Sweet-Home-Alabama/releases').then(response => console.log(response));
 
     }
 }
