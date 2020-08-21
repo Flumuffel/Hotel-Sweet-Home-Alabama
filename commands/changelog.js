@@ -17,9 +17,27 @@ module.exports = {
         }
 
         request(options , function (error, response, body) {
-            console.log('error:', error); // Print the error if one occurred
-            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-            console.log('body:', body);// Print the HTML for the Google homepage.
+            if( error == "null") {
+                message.channel.send(body.json());
+            } else {
+                console.log(error)
+                return message.channel.send({
+                    embed: {
+                        title: "Error",
+                        color: 0xfc0303,
+                        fields: [{
+                            name: `**Error**`,
+                            value: `**${error}**`,
+                            inline: false
+                        },
+                        {
+                            name: `**statusCode**`,
+                            value: `**${response && response.statusCode}**`,
+                            inline: false
+                        }]
+                    }
+                })
+            }
         });
 
     }
