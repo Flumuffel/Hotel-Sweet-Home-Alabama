@@ -8,7 +8,7 @@ module.exports = {
 
         const mem = message.mentions.members.first()
         const vc = args.join(" ")
-        const chan = client.channels.find("name", vc)
+        const chan = client.channels.cache.find("name", vc)
         mem.setVoiceChannel(chan)
 
     }
