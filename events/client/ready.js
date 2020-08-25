@@ -14,5 +14,5 @@ request(options, function (error, response, body) {
 
 module.exports = (client) => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.setActivity(`${version}`, { type: 'STREAMING' })
+    client.user.setActivity(`${version}`, { type: 'STREAMING' })
 }
