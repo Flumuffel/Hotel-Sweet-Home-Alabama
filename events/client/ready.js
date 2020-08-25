@@ -14,11 +14,5 @@ request(options, function (error, response, body) {
 
 module.exports = (client) => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setPresence({
-        status: "idle",  //You can show online, idle....
-        game: {
-            name: `${version}`,  //The message shown 
-            type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
-        }
-    });
+    client.setActivity(`${version}`, { type: 'STREAMING' })
 }
