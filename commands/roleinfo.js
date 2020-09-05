@@ -37,11 +37,7 @@ module.exports = {
             embed: {
                 title: `${role.name}`,
                 color: 0x1D82B6,
-                fields: [{
-                    name: `**User**`,
-                    value: `${desc}`,
-                    inline: true
-                },
+                fields: [
                 {
                     name: `**Member**`,
                     value: `${membersOfRole.size}`,
