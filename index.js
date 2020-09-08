@@ -69,8 +69,12 @@ client.on('message', async message => {
         let command = client.commands.get(cmd);
 
         if (!command) command = client.commands.get(client.aliases.get(cmd));
-
-        if (command) command.run(client, message, args, ops, fullCmd);
+        
+        if (command) {
+            message.channel.startTyping();
+            command.run(client, message, args, ops, fullCmd);
+            message.channel.stopTyping();
+        }
 
     } catch (e) { // Error handler
         console.log(e.stack);
