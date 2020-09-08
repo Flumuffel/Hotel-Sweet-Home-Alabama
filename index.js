@@ -11,6 +11,23 @@ const prefix = "h!";
 const ownerID = '274209471968837634';
 client.ver = "1.0.0"
 
+//SPEED DATING
+client.sdplayer1 = []
+client.sdplayer2 = []
+
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+    let newUserChannel = newMember.voice
+
+    console.log(newMember)
+
+    //if(newUserChannel === undefined){
+    //    if(client.sdplayer1.some(user => user === newMember)) {
+    //        var role= message.guild.roles.cache.find(role => role.name === "Date in game");
+    //        user.roles.remove(role);
+    //    }
+    // }
+})
+
 // Collections
 client.prefix = prefix;
 client.commands = new Collection();
