@@ -71,9 +71,7 @@ client.on('message', async message => {
         if (!command) command = client.commands.get(client.aliases.get(cmd));
         
         if (command) {
-            message.channel.startTyping();
             command.run(client, message, args, ops, fullCmd);
-            message.channel.stopTyping();
         }
 
     } catch (e) { // Error handler
