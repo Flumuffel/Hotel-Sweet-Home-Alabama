@@ -1,4 +1,5 @@
 const randomPuppy = require('random-puppy');
+const snekfetch = require('snekfetch');
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
@@ -12,14 +13,18 @@ module.exports = {
         const subReddits = ['DnDAnimemes', 'animememes', 'Animemes', 'animemebank', 'animememes', "wholesomeanimemes", "MemesOfAnime"]
         const random = subReddits[Math.floor(Math.random() * subReddits.length)]
 
-        const img = randomPuppy(random)
-        const embed = new MessageEmbed()
-            .setColor('RANDOM')
-            .setImage(img)
-            .setTitle(`From /r/${random}`)
-            .setURL(`http://reddit.com/r/${random}`)
+        message.channel.startTyping();
 
-        message.channel.send(embed)
+        const img = randomPuppy(random).then(url => {
+            snekfetch.get(url).then(async res => {
+                const embed = new MessageEmbed()
+                    .setColor('RANDOM')
+                    .setImage(res.body)
+                    .setTitle(`From /r/${random}`)
+                    .setURL(`http://reddit.com/r/${random}`)
+                await message.channel.send(embed).then(() => message.channel.stopTyping());
+            })
+        })
 
     }
 }
