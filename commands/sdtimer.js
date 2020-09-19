@@ -6,9 +6,9 @@ module.exports = {
     usage: "",
     run: (client, message, args) => {
         message.delete()
-        message.channel.send(`<@&756954555027030108> Die 4 min starten jetzt.`)
+        message.channel.send(`<@&751510273268908204> Die 4 min starten jetzt.`)
 
-        setTimeout(function(){ message.channel.send(`<@&756954555027030108> Halbzeit.`) }, 120000);
-        setTimeout(function(){ message.channel.send(`<@&756954555027030108> Ende kommt wieder alle hoch.`) }, 120000);
+        setTimeout(function(){ message.channel.send(`<@&751510273268908204> Halbzeit.`) }, 120000);
+        setTimeout(function(){ message.channel.send(`<@&751510273268908204> Ende kommt wieder alle hoch.`) }, 240000);
     }
 }
