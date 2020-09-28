@@ -14,7 +14,6 @@
     "discordjs-logger": "^1.9.42",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
-    "quick.db": "^7.1.1",
     "random-puppy": "^1.1.0",
     "request": "^2.88.2",
     "snekfetch": "^4.0.4"
