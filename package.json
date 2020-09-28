@@ -2,7 +2,7 @@
   "name": "hotel-sweet-home-alabama",
   "version":"1.0.2",
   "auto-updater":{
-    "repo":"/Flumuffel/Hotel-Sweet-Home-Alabama",
+    "repo":"Flumuffel/Hotel-Sweet-Home-Alabama",
     "branch":"master"
   },
   "description": "",
